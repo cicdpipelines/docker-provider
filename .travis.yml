@@ -1,0 +1,14 @@
+sudo: required
+language: go
+go:
+- master
+deploy:
+  provider: releases
+  api_key:
+    secure: HaQXxEuk+82XYlg7AKMfjvXdfHShGrTMLsvSa3TUCFkusK9M2mI1zwJb0LMeYiTCqYJp3svfTSwj5pN5aTgrRZAmRTIqKJMdq3Mpccx35KAgKyC8sloFNSAEvO7SwPs56W14I19vxEanP6JQHkcrmhbTprssWo1IAJpZwCErQqqlcUrKCBTy5ApRdeAaHZ8S3i9cKeyP3DL6sB2fIMniFpeMMyydKEgtSmISYZWxV+gl4aSxESx0rK0bH32XiZgwJEVWfE7CPwL0uOmWP1jBoYgUDKshs2de9pDKbFTe6mtzE3X6ku86YPQNakJJolYGwJuZMh+HdQZ9eLbgKVRlsIprStVx2QQJaYI+B4QuHubOkCLKxErlqAIZkTRYsFsIfOXMxe/5SMxmxA6v4/L8evbwQxd1dii12Rn2gEpz7xxHObIN8XjIuZwWpUa0ICByRpOYdGfpwl6KlKuOyg+ctV5cH0+d/mQxP0n9QgWHzWAQds0eXDyMg/EMR3Z7zdfHdqqlmaArabBzGQzz0iefCxF79Qg0kcryrr5g7NPZnr2OFfOLhAsyseaaMWAxBxXywdYqbs5JEMSaxcv0J6j7fHs9m0cF7rMhkeP2pq9WrfZyL6wzojPsjOI3+7cwDKowSRL6ZGNJzn0c4pa80bA5i/+PpY13IJLnyETEs43ewRU=
+  file_glob: true
+  file: build/archive/*
+  skip_cleanup: true
+  on:
+    repo: cicdpipelines/docker-provider
+    tags: true

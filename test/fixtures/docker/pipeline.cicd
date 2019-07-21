@@ -1,0 +1,17 @@
+provider "docker" {}
+
+step "docker_build" "build" {
+    name = "imagename"
+    tag = "latest"
+}
+
+step "docker_build" "build_other" {
+    name = "imagename_other"
+    tag = "latest"
+    path = "otherpath/"
+}
+
+step "docker_push" "publish" {
+    name = "imagename"
+    tag = "latest"   
+}
